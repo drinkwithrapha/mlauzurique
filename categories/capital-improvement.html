@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Improvement | Manuel Lauzurique-Abiega</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --color-accent: #A0755A;
+    --color-accent-hover: #8B6349;
+    --color-text: #1a1a1a;
+    --color-text-light: #666;
+    --color-text-muted: #999;
+    --color-bg: #ffffff;
+    --color-bg-off: #fafafa;
+    --color-footer: #3A3A3A;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 1200px;
+    --transition: 0.3s ease;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); font-size: 16px; line-height: 1.6; color: var(--color-text); background-color: var(--color-bg); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+.logo a {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+}
+
+.back-link {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+}
+
+.back-link:hover { color: var(--color-accent); }
+.category-hero { padding: 140px 0 60px; }
+.category-title { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 400; margin-bottom: 20px; }
+.category-description { font-family: var(--font-sans); font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; }
+.projects-section { padding: 40px 0 120px; }
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.project-item { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+.project-link { display: block; width: 100%; height: 100%; }
+.project-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition); }
+.project-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; text-align: left; padding: 30px; opacity: 0; transition: opacity var(--transition); }
+.project-item:hover img { transform: scale(1.05); }
+.project-item:hover .project-overlay { opacity: 1; }
+.project-name { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: #fff; margin-bottom: 10px; line-height: 1.2; }
+.project-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.project-location { font-family: var(--font-sans); font-size: 0.8rem; color: rgba(255, 255, 255, 0.75); letter-spacing: 0.08em; text-transform: uppercase; }
+.project-award { font-family: var(--font-sans); font-size: 0.7rem; color: #fff; background: rgba(160, 117, 90, 0.85); display: inline-block; padding: 4px 10px; border-radius: 3px; margin-top: 12px; letter-spacing: 0.05em; }
+.footer { background-color: var(--color-footer); padding: 60px 0 30px; color: #fff; }
+.footer-content { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.footer-left h4 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; margin-bottom: 5px; }
+.footer-left p, .footer-right p { font-family: var(--font-sans); font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); }
+.footer-right { text-align: right; }
+.footer-right p { margin-bottom: 8px; }
+.footer-right a { color: rgba(255, 255, 255, 0.7); transition: color var(--transition); }
+.footer-right a:hover { color: var(--color-accent); }
+.footer-bottom { padding-top: 30px; text-align: center; }
+.footer-bottom p { font-family: var(--font-sans); font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); }
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .header { padding: 16px 20px; }
+    .logo a { font-size: 1.3rem; }
+    .back-link { font-size: 0.6rem; }
+    .category-hero { padding: 100px 0 40px; }
+    .category-title { font-size: 2.5rem; }
+    .category-description { font-size: 0.95rem; }
+    .project-grid { grid-template-columns: 1fr; gap: 12px; }
+    .project-overlay { opacity: 1; background: rgba(0, 0, 0, 0.4); justify-content: flex-end; padding: 20px; }
+    .project-name { font-size: 1.25rem; }
+    .footer-content { flex-direction: column; gap: 24px; }
+    .footer-right { text-align: left; }
+}
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html">Manuel Lauzurique-Abiega</a>
+        </div>
+        <a href="../index.html#categories" class="back-link">← All Projects</a>
+    </header>
+
+    <section class="category-hero">
+        <div class="container">
+            <h1 class="category-title">Capital Improvement</h1>
+            <p class="category-description">Renovation and repositioning projects that transform existing buildings through strategic interior upgrades and amenity enhancements.</p>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="project-grid">
+                <div class="project-item fade-in">
+                    <a href="../projects/virginia-square.html" class="project-link">
+                        <img src="../images/virginia-square/12.jpg" alt="Virginia Square">
+                        <div class="project-overlay">
+                            <span class="project-name">Virginia Square</span>
+                            <span class="project-divider"></span>
+                            <span class="project-location">Arlington, VA</span>
+                            <span class="project-award">🏆 Delta Associates Award</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-item fade-in">
+                    <a href="../projects/van-ness.html" class="project-link">
+                        <img src="../images/van-ness/1.jpg" alt="Van Ness">
+                        <div class="project-overlay">
+                            <span class="project-name">Van Ness</span>
+                            <span class="project-divider"></span>
+                            <span class="project-location">Washington, DC</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-item fade-in">
+                    <a href="../projects/water-park-towers.html" class="project-link">
+                        <img src="../images/water-park-towers/cover.jpg" alt="Water Park Towers">
+                        <div class="project-overlay">
+                            <span class="project-name">Water Park Towers</span>
+                            <span class="project-divider"></span>
+                            <span class="project-location">Arlington, VA</span>
+                            <span class="project-award">🏆 NAIOP Award</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h4>Manuel Lauzurique-Abiega</h4>
+                <p>Interior Architect</p>
+            </div>
+            <div class="footer-right">
+                <p><a href="mailto:mlauzurique@yahoo.com">mlauzurique@yahoo.com</a></p>
+                <p><a href="tel:+12022944680">202.294.4680</a></p>
+                <p>Washington, DC</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Manuel Lauzurique-Abiega. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

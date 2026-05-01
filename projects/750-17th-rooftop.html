@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>750 17th Street Rooftop | Manuel Lauzurique-Abiega</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --color-accent: #A0755A;
+    --color-accent-hover: #8B6349;
+    --color-text: #1a1a1a;
+    --color-text-light: #777;
+    --color-text-muted: #999;
+    --color-bg: #ffffff;
+    --color-bg-off: #fafaf8;
+    --color-footer: #3A3A3A;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 1200px;
+    --transition: 0.3s ease;
+    --grid-gap: 12px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); font-size: 16px; line-height: 1.6; color: var(--color-text); background-color: var(--color-bg); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 25px 60px; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: background var(--transition), backdrop-filter var(--transition); }
+.header.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+.logo a { font-family: var(--font-serif); font-size: 2rem; font-weight: 500; letter-spacing: 0.02em; color: var(--color-text); }
+.back-link { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-light); transition: color var(--transition); }
+.back-link:hover { color: var(--color-accent); }
+.hero { width: 100%; padding: 100px 0 0; }
+.hero img { width: 100%; height: 70vh; object-fit: cover; }
+.project-info { padding: 80px 0; }
+.project-info-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; }
+.project-title { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; line-height: 1.15; margin-bottom: 40px; }
+.project-meta { display: grid; grid-template-columns: auto 1fr; gap: 12px 30px; }
+.meta-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); }
+.meta-value { font-family: var(--font-sans); font-size: 0.875rem; color: var(--color-text-light); }
+.project-description p { font-family: var(--font-sans); font-size: 1.3rem; line-height: 1.8; color: var(--color-text-light); margin-bottom: 20px; }
+.project-description p:last-child { margin-bottom: 0; }
+.gallery { padding: 0 0 100px; }
+.gallery-row { display: grid; gap: var(--grid-gap); margin-bottom: var(--grid-gap); }
+.gallery-row.two-col { grid-template-columns: 1fr 1fr; }
+.gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+.gallery-row.full-width { grid-template-columns: 1fr; }
+.gallery-row.asymmetric-lr { grid-template-columns: 1.5fr 1fr; }
+.gallery-row.asymmetric-rl { grid-template-columns: 1fr 1.5fr; }
+.gallery-row.two-col-portrait { grid-template-columns: 1fr 1fr; }
+.gallery-img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-row.two-col .gallery-img, .gallery-row.three-col .gallery-img { aspect-ratio: 4/3; }
+.gallery-row.full-width .gallery-img { aspect-ratio: 16/7; }
+.gallery-row.asymmetric-lr .gallery-img, .gallery-row.asymmetric-rl .gallery-img { aspect-ratio: 4/3; }
+.gallery-row.two-col-portrait .gallery-img { aspect-ratio: 3/4; }
+.text-interlude { padding: 80px 0; }
+.interlude-grid { display: grid; grid-template-columns: auto 1fr; gap: 20px 60px; max-width: 900px; }
+.interlude-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); padding-top: 4px; }
+.interlude-text p { font-family: var(--font-sans); font-size: 1.3rem; line-height: 1.8; color: var(--color-text-light); margin-bottom: 16px; }
+.interlude-text p:last-child { margin-bottom: 0; }
+.project-nav { padding: 60px 0; text-align: center; }
+.project-nav a { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); transition: color var(--transition); }
+.project-nav a:hover { color: var(--color-accent-hover); }
+.footer { background-color: var(--color-footer); padding: 60px 0 30px; color: #fff; }
+.footer-content { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.footer-left h4 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; margin-bottom: 5px; }
+.footer-left p, .footer-right p { font-family: var(--font-sans); font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); }
+.footer-right { text-align: right; }
+.footer-right p { margin-bottom: 8px; }
+.footer-right a { color: rgba(255, 255, 255, 0.7); transition: color var(--transition); }
+.footer-right a:hover { color: var(--color-accent); }
+.footer-bottom { padding-top: 30px; text-align: center; }
+.footer-bottom p { font-family: var(--font-sans); font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); }
+@media (max-width: 1024px) { .project-info-grid { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .header { padding: 16px 20px; }
+    .logo a { font-size: 1.5rem; }
+    .back-link { font-size: 0.7rem; }
+    .hero { padding: 70px 0 0; }
+    .hero img { height: 50vh; }
+    .project-info { padding: 40px 0 60px; }
+    .project-title { font-size: 2rem; margin-bottom: 24px; }
+    .project-meta { gap: 8px 20px; }
+    .meta-label { font-size: 0.7rem; }
+    .meta-value { font-size: 0.8rem; }
+    .project-description p { font-size: 0.9rem; line-height: 1.7; }
+    .gallery-row.three-col { grid-template-columns: 1fr 1fr; }
+    .gallery-row.asymmetric-lr, .gallery-row.asymmetric-rl { grid-template-columns: 1fr; }
+    .gallery-row.two-col-portrait { grid-template-columns: 1fr 1fr; }
+    .gallery-row .gallery-img { aspect-ratio: 4/3; }
+    .gallery-row.two-col-portrait .gallery-img { aspect-ratio: 3/4; }
+    .text-interlude { padding: 50px 0; }
+    .interlude-grid { grid-template-columns: 1fr; gap: 10px; }
+    .interlude-text p { font-size: 0.9rem; }
+    .footer-content { flex-direction: column; gap: 24px; }
+    .footer-right { text-align: left; }
+}
+@media (max-width: 400px) {
+    .container { padding: 0 16px; }
+    .header { padding: 14px 16px; }
+    .logo a { font-size: 1.3rem; }
+    .project-title { font-size: 1.6rem; }
+    .gallery-row.two-col, .gallery-row.three-col, .gallery-row.two-col-portrait { grid-template-columns: 1fr; }
+    .gallery-row.two-col-portrait .gallery-img { aspect-ratio: 4/3; }
+}
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="logo">
+            <a href="../index.html">Manuel Lauzurique-Abiega</a>
+        </div>
+        <a href="../index.html#projects" class="back-link">← All Projects</a>
+    </header>
+
+    <section class="hero">
+        <img src="../images/750-17th-rooftop/1.jpg" alt="750 17th Street Rooftop, Washington DC" loading="eager">
+    </section>
+
+    <section class="project-info">
+        <div class="container">
+            <div class="project-info-grid">
+                <div>
+                    <h1 class="project-title">750 17th Street Rooftop</h1>
+                    <div class="project-meta">
+                        <span class="meta-label">Location</span>
+                        <span class="meta-value">Washington, DC</span>
+                        <span class="meta-label">Client</span>
+                        <span class="meta-value">John Hancock Company</span>
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Completed 2019</span>
+                        <span class="meta-label">Services</span>
+                        <span class="meta-value">Architecture, Interior Architecture</span>
+                        <span class="meta-label">Program</span>
+                        <span class="meta-value">Rooftop terrace amenity renovation</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>The project consists of a renovation and addition to accommodate a new rooftop amenity space for the office building tenants, including outdoor terrace space, new rooftop bathroom facilities, along with the vertical transportation including addition of a new stop for a single elevator to access the roof level, and the required egress for accommodating the new assembly occupancy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+
+            <div class="gallery-row full-width fade-in">
+                <img class="gallery-img" src="../images/750-17th-rooftop/2.jpg" alt="750 17th Street Rooftop terrace" loading="lazy">
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="text-interlude">
+                <div class="interlude-grid">
+                    <span class="interlude-label">The Terrace</span>
+                    <div class="interlude-text">
+                        <p>The outdoor terrace space includes a variety of seating and gathering areas, a trellis, a grill and prep area, and egress stairs. The 12th floor level of the office building is renovated to accommodate the new stair, along with an exit corridor leading to the existing stair tower for the building.</p>
+                        <p>The exterior walls of the new stair and bathroom facility are clad with brick to match the existing building, minimizing the visual impact of the newly enlarged penthouse enclosure. Areas of glass and aluminum window wall are utilized for purposes of daylighting the new program spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="gallery-row full-width fade-in">
+                <img class="gallery-img" src="../images/750-17th-rooftop/3.jpg" alt="750 17th Street Rooftop with Washington Monument view" loading="lazy">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="project-nav">
+        <a href="../index.html#projects">← Back to All Projects</a>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h4>Manuel Lauzurique-Abiega</h4>
+                <p>Interior Architect</p>
+            </div>
+            <div class="footer-right">
+                <p><a href="mailto:mlauzurique@yahoo.com">mlauzurique@yahoo.com</a></p>
+                <p><a href="tel:+12022944680">202.294.4680</a></p>
+                <p>Washington, DC</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Manuel Lauzurique-Abiega. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.pageYOffset > 100); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.vercel
+server.js
+*.backup
+index-backup.html
+index.html.backup
+BUILD_SUMMARY.md
+COMPLETION_REPORT.md
+TASK-COMPLETE.md

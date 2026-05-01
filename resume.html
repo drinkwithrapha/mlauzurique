@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuel Lauzurique-Abiega | Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@page {
+    size: letter;
+    margin: 0.5in 0.7in;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-accent: #A0755A;
+    --color-text: #1a1a1a;
+    --color-text-light: #666;
+    --color-rule: #d4c5b9;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 9pt;
+    line-height: 1.45;
+    color: var(--color-text);
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.5in 0.7in;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* === HEADER === */
+.header {
+    text-align: center;
+    margin-bottom: 14pt;
+    padding-bottom: 10pt;
+    border-bottom: 1.5pt solid var(--color-accent);
+}
+
+.header h1 {
+    font-family: var(--font-serif);
+    font-size: 24pt;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--color-text);
+    margin-bottom: 3pt;
+}
+
+.header .subtitle {
+    font-family: var(--font-serif);
+    font-size: 10pt;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-accent);
+    letter-spacing: 0;
+    margin-bottom: 6pt;
+}
+
+.header .contact {
+    font-family: var(--font-sans);
+    font-size: 8pt;
+    font-weight: 300;
+    color: var(--color-text-light);
+    letter-spacing: 0.5px;
+}
+
+.header .contact .sep {
+    color: var(--color-accent);
+    margin: 0 6px;
+}
+
+/* === PAGE 1 THREE-COLUMN LAYOUT === */
+.page1-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0 20pt;
+}
+
+.sidebar {
+    border-right: 0.75pt solid var(--color-rule);
+    padding-right: 14pt;
+}
+
+.main-content {
+    padding-left: 0;
+}
+
+/* === SECTIONS === */
+.section {
+    margin-top: 12pt;
+}
+
+.section:first-child {
+    margin-top: 0;
+}
+
+.section-header {
+    font-family: var(--font-sans);
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 0.75pt solid var(--color-rule);
+    padding-bottom: 3pt;
+    margin-bottom: 6pt;
+}
+
+/* === SUMMARY === */
+.summary {
+    font-size: 9pt;
+    line-height: 1.45;
+    color: var(--color-text);
+    font-weight: 300;
+}
+
+/* === EXPERIENCE === */
+.experience-entry {
+    margin-bottom: 6pt;
+}
+
+.company {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 9.5pt;
+    color: var(--color-text);
+}
+
+.company .location {
+    font-weight: 300;
+    color: var(--color-text-light);
+}
+
+.title-dates {
+    font-family: var(--font-sans);
+    font-size: 8.5pt;
+    font-weight: 300;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+/* === SKILLS === */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6pt;
+}
+
+.skill-item {
+    font-size: 9pt;
+}
+
+.skill-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--color-accent);
+    margin-bottom: 2pt;
+}
+
+.skill-desc {
+    font-weight: 300;
+    font-size: 7.5pt;
+    line-height: 1.3;
+    color: var(--color-text);
+}
+
+/* === SIDEBAR SECTIONS === */
+.education-item {
+    font-size: 9pt;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.education-item strong {
+    font-weight: 500;
+    color: var(--color-text-light);
+}
+
+.sidebar .education-item {
+    color: var(--color-text-light);
+}
+
+ul.pub-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.pub-list li {
+    font-size: 8pt;
+    font-weight: 300;
+    color: var(--color-text-light);
+    margin-bottom: 2pt;
+    padding-left: 10pt;
+    position: relative;
+}
+
+ul.pub-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6pt;
+    width: 4pt;
+    height: 4pt;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+/* === AWARDS (sidebar, single column) === */
+.award-item {
+    font-size: 8pt;
+    font-weight: 300;
+    color: var(--color-text-light);
+    margin-bottom: 2pt;
+}
+
+.award-item .award-name {
+    font-weight: 400;
+    color: var(--color-text-light);
+}
+
+.award-item .award-org {
+    color: var(--color-accent);
+    font-weight: 400;
+}
+
+/* === PAGE 2 - PROJECTS === */
+.page-break {
+    page-break-before: always;
+}
+
+.page2-header {
+    text-align: center;
+    margin-top: 40pt;
+    margin-bottom: 18pt;
+    padding-bottom: 10pt;
+    border-bottom: 1.5pt solid var(--color-accent);
+}
+
+.page2-header h2 {
+    font-family: var(--font-serif);
+    font-size: 18pt;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--color-text);
+}
+
+.page2-header .name-ref {
+    font-family: var(--font-sans);
+    font-size: 8pt;
+    font-weight: 300;
+    color: var(--color-text-light);
+    letter-spacing: 0.5px;
+}
+
+.category-header {
+    font-family: var(--font-sans);
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 14pt;
+    margin-bottom: 8pt;
+    padding-bottom: 3pt;
+    border-bottom: 0.5pt solid var(--color-rule);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8pt 16pt;
+}
+
+.project {
+    margin-bottom: 0;
+}
+
+.project-name {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 8.5pt;
+    color: var(--color-text);
+}
+
+.project-location {
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: normal;
+    font-size: inherit;
+    color: inherit;
+}
+
+.project-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-link:hover .project-name {
+    color: var(--color-accent);
+}
+
+.project-link:hover .project-desc {
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule);
+    text-underline-offset: 2px;
+}
+
+.project-desc {
+    font-size: 8pt;
+    font-weight: 300;
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+.project .award-tag {
+    font-family: var(--font-sans);
+    font-size: 7.5pt;
+    font-weight: 400;
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+/* === DOWNLOAD BUTTON === */
+.download-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-family: var(--font-sans);
+    font-size: 9pt;
+    font-weight: 500;
+    color: #fff;
+    background: var(--color-accent);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    z-index: 100;
+}
+
+.download-btn:hover {
+    background: #8B6349;
+}
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+    body {
+        padding: 24px 20px;
+        font-size: 11pt;
+        line-height: 1.55;
+    }
+
+    .header h1 {
+        font-size: 22pt;
+    }
+
+    .header .subtitle {
+        font-size: 11pt;
+    }
+
+    .header .contact {
+        font-size: 9pt;
+        line-height: 1.8;
+    }
+
+    .header .contact .sep {
+        display: none;
+    }
+
+    .header .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+
+    /* Stack sidebar below main content on mobile */
+    .page1-grid {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .sidebar {
+        border-right: none;
+        padding-right: 0;
+        border-top: 0.75pt solid var(--color-rule);
+        padding-top: 16pt;
+        margin-top: 16pt;
+    }
+
+    .section-header {
+        font-size: 10pt;
+        letter-spacing: 1px;
+    }
+
+    .summary {
+        font-size: 11pt;
+        line-height: 1.6;
+    }
+
+    .company {
+        font-size: 11pt;
+    }
+
+    .title-dates {
+        font-size: 10pt;
+    }
+
+    .skill-title {
+        font-size: 12pt;
+    }
+
+    .skill-desc {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+
+    .award-item {
+        font-size: 10pt;
+        margin-bottom: 8pt;
+    }
+
+    ul.pub-list li {
+        font-size: 10pt;
+    }
+
+    .education-item {
+        font-size: 11pt;
+    }
+
+    /* Page 2 */
+    .page-break {
+        page-break-before: auto;
+    }
+
+    .page2-header {
+        margin-top: 30pt;
+    }
+
+    .page2-header h2 {
+        font-size: 16pt;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16pt;
+    }
+
+    .project-name {
+        font-size: 11pt;
+    }
+
+    .project-desc {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+
+    .project .award-tag {
+        font-size: 9pt;
+        display: inline-block;
+        background: rgba(160, 117, 90, 0.1);
+        padding: 3px 8px;
+        border-radius: 3px;
+        margin-top: 4pt;
+    }
+
+    .category-header {
+        font-size: 10pt;
+        margin-top: 20pt;
+    }
+
+    .download-btn {
+        position: fixed;
+        top: auto;
+        bottom: 16px;
+        right: 16px;
+        padding: 12px 20px;
+        font-size: 10pt;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+}
+
+/* === PRINT === */
+@media print {
+    body {
+        padding: 0;
+    }
+    .page-break {
+        page-break-before: always;
+    }
+    .download-btn {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+<a href="Manuel-Lauzurique-Abiega-Resume.pdf" class="download-btn" download>Download PDF</a>
+
+<!-- PAGE 1 -->
+<div class="header">
+    <h1><a href="https://staging.drinkwithrapha.com/" style="color:inherit;text-decoration:none;">Manuel Lauzurique-Abiega</a></h1>
+    <div class="subtitle">Interior Architect</div>
+    <div class="contact">
+        425 L Street NW, Apt. 423, Washington, DC 20001
+        <span class="sep">·</span>
+        mlauzurique@yahoo.com
+        <span class="sep">·</span>
+        202.294.4680
+    </div>
+</div>
+
+<div class="page1-grid">
+    <div class="sidebar">
+        <div class="section">
+            <div class="section-header">Awards</div>
+            <div class="award-item"><span class="award-org">Delta Associates</span> — <span class="award-name">Best Washington High Rise Apartment Community</span>, 2020</div>
+            <div class="award-item"><span class="award-org">Delta Associates</span> — <span class="award-name">Best Washington/Baltimore Interior Design Apartment Community</span>, 2020</div>
+            <div class="award-item"><span class="award-org">Delta Associates</span> — <span class="award-name">Best Lease-Up, Northern Virginia Apartment Community</span>, 2020</div>
+            <div class="award-item"><span class="award-org">Delta Associates</span> — <span class="award-name">Best Washington/Baltimore Interior Renovated Apartment Community</span>, 2020</div>
+            <div class="award-item"><span class="award-org">Delta Associates</span> — <span class="award-name">Best Washington/Baltimore High-Rise Condominium Community</span>, 2019</div>
+            <div class="award-item"><span class="award-org">NAIOP NoVA</span> — <span class="award-name">Award of Merit: Capital Improvements</span>, 2018</div>
+            <div class="award-item"><span class="award-org">Delta Associates</span> — <span class="award-name">Best Boutique Project, Mid-Atlantic</span>, 2010</div>
+            <div class="award-item"><span class="award-org">MAME Award</span> — <span class="award-name">Best Sales Center: Avera Station</span>, 2006</div>
+            <div class="award-item"><span class="award-org">AIA</span> — <span class="award-name">Award for Community Design: Belmont Heights</span>, 2004</div>
+            <div class="award-item"><span class="award-org">Hillsborough County</span> — <span class="award-name">Community Design of Excellence: Belmont Heights</span>, 2003</div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Publications</div>
+            <ul class="pub-list">
+                <li>"David M. Schwarz" — Greyson Publishing, 2002</li>
+                <li>"The New Bungalow" — Gibbs-Smith Publishers, 2002</li>
+                <li>Architecture DC, The Ascent, 2015</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Education</div>
+            <div class="education-item">
+                <strong>Bachelor of Architecture</strong><br>
+                The Catholic University of America
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <div class="section-header">Professional Summary</div>
+            <div class="summary">
+                Associate Principal and Director of Interiors with 28 years of experience in multifamily and commercial interior architecture. Recognized for delivering award-caliber projects across amenity spaces, lobbies, and residential environments. Expert in all design phases—concept development through construction administration—with strong command of FF&E specification and procurement. Strategic client advocate with a proven track record of design excellence and directing high-performing creative teams.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Experience</div>
+            <div class="experience-entry">
+                <div class="company">WDG Interior Architecture <span class="location">— Washington, DC</span></div>
+                <div class="title-dates">July 2005 – Present</div>
+                <div class="title-dates" style="font-style: normal; margin-top: 2pt; display: grid; grid-template-columns: 1fr 1fr; gap: 0 10pt; line-height: 1.3; font-size: 8pt;">
+                    <span>Associate Principal / Design Lead</span>
+                    <span>Senior Associate</span>
+                    <span>Interiors Architecture Director</span>
+                    <span>Associate</span>
+                    <span>Interior Multifamily Director</span>
+                    <span>Senior Designer</span>
+                </div>
+            </div>
+            <div class="experience-entry">
+                <div class="company">ARCADIA Design Services Inc. <span class="location">— Washington, DC</span></div>
+                <div class="title-dates">October 2002 – July 2005</div>
+                <div class="title-dates" style="font-style: normal; margin-top: 2pt; font-size: 8pt;">Project Designer / Project Architect</div>
+            </div>
+            <div class="experience-entry">
+                <div class="company">Torti Gallas and Partners <span class="location">— Silver Spring, MD</span></div>
+                <div class="title-dates">July 2001 – October 2002</div>
+                <div class="title-dates" style="font-style: normal; margin-top: 2pt; font-size: 8pt;">Project Designer</div>
+            </div>
+            <div class="experience-entry">
+                <div class="company">David M. Schwarz / Architectural Services Inc. <span class="location">— Washington, DC</span></div>
+                <div class="title-dates">August 1998 – July 2001</div>
+                <div class="title-dates" style="font-style: normal; margin-top: 2pt; font-size: 8pt;">Architect Designer</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Core Competencies</div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-title">Design Leadership</div>
+                    <div class="skill-desc">Leading creative efforts and defining project foundations through storytelling. Merging strategy and conceptual visions to achieve outstanding results.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">Relationship Management</div>
+                    <div class="skill-desc">Building and maintaining client relationships, ensuring needs are met and expectations exceeded. Effective in client development and interviews.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">Talent Development</div>
+                    <div class="skill-desc">Dedicated mentor developing next-generation talent. Active in recruiting and outreach.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page-break"></div>
+
+<div class="page2-header">
+    <h2>Selected Project Experience</h2>
+    <div class="name-ref">Manuel Lauzurique-Abiega &nbsp;·&nbsp; Interior Architect</div>
+</div>
+
+<div class="category-header">Multifamily Residential</div>
+
+<div class="projects-grid">
+    <!-- Award-winning projects first -->
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/1331-maryland.html" class="project-link"><div class="project-name">1331 Maryland, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">14-story, 485,712-sf residential building with 292 apartments, 76 condominiums, and 12,400-sf of amenity space.</a></div>
+        <div class="award-tag">△ Delta Associates: Best Washington High Rise Apartment Community, 2020</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/waycroft.html" class="project-link"><div class="project-name">The Waycroft, <span class="project-location">Arlington, VA</span></div>
+        <div class="project-desc">500,000-sf mixed-use building (12-9-4 stories) with 483 units, below-grade parking, and 68,285-sf retail including grocery store.</a></div>
+        <div class="award-tag">△ Delta Associates: Best Washington/Baltimore Interior Design Apartment Community, 2020</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/witmer.html" class="project-link"><div class="project-name">The Witmer, <span class="project-location">Arlington, VA</span></div>
+        <div class="project-desc">446,400-sf, 25-story, 440-unit residential tower with 6-story parking garage and 11,400-sf retail.</a></div>
+        <div class="award-tag">△ Delta Associates: Best Lease-Up, Northern Virginia, 2020</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Virginia Square, <span class="project-location">Arlington, VA</span></div>
+        <div class="project-desc">Lobby renovation and building repositioning.</div>
+        <div class="award-tag">△ Delta Associates: Best Washington/Baltimore Interior Renovated Apartment Community, 2020</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/bower.html" class="project-link"><div class="project-name">The Bower, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">144,000-sf, 11-story condominium building with 142 units and penthouse lounge.</a></div>
+        <div class="award-tag">△ Delta Associates: Best Washington/Baltimore High-Rise Condominium Community, 2019</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/water-park-towers.html" class="project-link"><div class="project-name">Water Park Towers, <span class="project-location">Arlington, VA</span></div>
+        <div class="project-desc">Residential building renovation including new lobby, fitness center, business center, and residential corridors.</a></div>
+        <div class="award-tag">△ NAIOP NoVA Award of Merit: Capital Improvements, 2018</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Ashton at Judiciary Square, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">3,000-sf lobby and public spaces for a 49-unit luxury apartment building.</div>
+        <div class="award-tag">△ Delta Associates: Best Boutique Project, Mid-Atlantic, 2010</div>
+    </div>
+    <!-- Remaining projects -->
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/accolade.html" class="project-link"><div class="project-name">1425 NYA NW — The Accolade, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">Conversion of a 13-story, 287,042-sf Class B Office Building into a 255-unit apartment building.</a></div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/hampden-house.html" class="project-link"><div class="project-name">Hampden House, <span class="project-location">Bethesda, MD</span></div>
+        <div class="project-desc">26-story, 336-unit apartment building including lobby, leasing center, workspace, fitness center, clubhouse, and unit finishes.</a></div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/cielo.html" class="project-link"><div class="project-name">300 M Street NE (Cielo), <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">442,759-sf, 11-story, 456-unit apartment building. Amenities include clubroom, leasing office, fitness center, rooftop pool, and sun deck.</a></div>
+    </div>
+    <div class="project">
+        <div class="project-name">Golf Course Overlook Apartments, <span class="project-location">Reston, VA</span></div>
+        <div class="project-desc">10-story, 300-unit residential building with scenic visual access to a golf course.</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/upton.html" class="project-link"><div class="project-name">The Upton, <span class="project-location">Short Hills, NJ</span></div>
+        <div class="project-desc">5-story, ±215-unit residential apartment building including lobby, elevators, and amenity spaces.</a></div>
+    </div>
+    <div class="project">
+        <div class="project-name">1401 South Joyce on Pentagon Row, <span class="project-location">Arlington, VA</span></div>
+        <div class="project-desc">7,400-sf renovation of common areas and amenities including lobby, co-working lounge, fitness center, and 19th-floor clubroom.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Urby at The Yards Parcel H, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">13-story, 478-unit residential building with 22,000-sf ground floor retail, public courtyard, café, fitness center, pool deck, and gardening space.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">The Carleton, <span class="project-location">Chevy Chase, MD</span></div>
+        <div class="project-desc">Repositioning of a 140-unit, 12-story luxury condominium building including lobby, mailroom, and public restrooms.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">4620 North Park Ave, <span class="project-location">Chevy Chase, MD</span></div>
+        <div class="project-desc">Renovation and repositioning of residential building including lobby, corridor, elevators, and entrance.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Metro Tower Apartments, <span class="project-location">Bethesda, MD</span></div>
+        <div class="project-desc">26-story, 336-unit apartment building including lobby, leasing center, and workspace.</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/vio-incanto.html" class="project-link"><div class="project-name">VIO & Incanto at The Wharf, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">12-story, 369,000-sf luxury residential building with 150 rental units and 112 condominiums. Full interior design including lobbies, public areas, corridors, and model units.</a></div>
+    </div>
+    <div class="project">
+        <div class="project-name">The Latrobe Apartments, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">Renovation of a 175-unit high-rise residential building including clubroom, common areas, rooftop, fitness facility, and model unit.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">100 K Street NE, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">200,000-sf, 13-story, 222-unit residential with 2,000-sf retail and 58,000-sf below-grade parking.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">The Premier, <span class="project-location">Silver Spring, MD</span></div>
+        <div class="project-desc">150,000-sf, 14-story, 160-unit apartment building with full interior design of public and amenity areas.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">460 New York Avenue Condominiums, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">11-story, 62,000-sf, 63-unit residential condominium with interior design of public and amenity areas.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Camden South Capitol, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">276-unit apartment building with interior architecture and design services. Full FF&E package for amenities and model units.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Ripley Street, <span class="project-location">Silver Spring, MD</span></div>
+        <div class="project-desc">Lobby, leasing center, and amenities for 368-unit LEED-Silver residential building. Full FF&E package.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">1200 East-West Highway, <span class="project-location">Silver Spring, MD</span></div>
+        <div class="project-desc">247-unit, 14-story residential high-rise with interior architecture and design. Full FF&E package.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Midtown Silver Spring, <span class="project-location">Silver Spring, MD</span></div>
+        <div class="project-desc">325-unit condominium with main lobby, concierge, sales center, business center, club room, game room, media center, and guest suite.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">University Town Center, <span class="project-location">Hyattsville, MD</span></div>
+        <div class="project-desc">Sales and marketing center for condominium complex with interior design for buildings I, II, and V.</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/ascent.html" class="project-link"><div class="project-name">The Ascent, <span class="project-location">Tysons, VA</span></div>
+        <div class="project-desc">416,834-sf, 26-story, 404-unit apartment building. Interior design of public and amenity spaces including penthouse clubroom, fitness center, and spa.</a></div>
+    </div>
+    <div class="project">
+        <div class="project-name">Haden, <span class="project-location">Tysons, VA</span></div>
+        <div class="project-desc">14-story and 6-story multifamily buildings with 425 residential units in 428,871-sf.</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/nouvelle.html" class="project-link"><div class="project-name">Nouvelle, <span class="project-location">Tysons, VA</span></div>
+        <div class="project-desc">444,012-sf, 27-story, 461-unit residential building with 13,176-sf amenities.</a></div>
+    </div>
+</div>
+
+<div class="category-header">Commercial Office</div>
+
+<div class="projects-grid">
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/iadb.html" class="project-link"><div class="project-name">Inter-American Development Bank, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">Five-floor renovation and expansion including new communicating staircase. Design services completed over a series of task orders.</a></div>
+    </div>
+    <div class="project">
+        <div class="project-name">Tompkins Builders, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">17,500-sf headquarters office utilizing green/sustainable products.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Army Test and Evaluation Command (ATEC), <span class="project-location">Aberdeen, MD</span></div>
+        <div class="project-desc">LEED Gold 140,000-sf administrative office building housing 610 personnel.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">National Cable Communications, <span class="project-location">Bethesda, MD</span></div>
+        <div class="project-desc">12,000-sf new corporate offices.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">National Cable Communications, <span class="project-location">Dallas, TX</span></div>
+        <div class="project-desc">16,000-sf new corporate office space.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Park Potomac Building E, <span class="project-location">Potomac, MD</span></div>
+        <div class="project-desc">Lobby and public spaces for 153,000-sf office building with 25,000-sf retail.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">Missile Defense Agency, <span class="project-location">Ft. Belvoir, VA</span></div>
+        <div class="project-desc">LEED Silver 100,000-sf design/build MDA headquarters command center building.</div>
+    </div>
+    <div class="project">
+        <div class="project-name">9302 Lee Highway, <span class="project-location">Arlington, VA</span></div>
+        <div class="project-desc">Lobby renovation and building repositioning.</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/gallows-road.html" class="project-link"><div class="project-name">1900 Gallows Road, <span class="project-location">Vienna, VA</span></div>
+        <div class="project-desc">Lobby renovation and building repositioning with conference center, fitness center, and monumental stair connecting amenities to main lobby.</a></div>
+    </div>
+    <div class="project">
+        <div class="project-name">20 M Street NW Amenity Space, <span class="project-location">Washington, DC</span></div>
+        <div class="project-desc">4,000-sf amenity suite and conference center including lounges, game areas, and meeting spaces.</div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/tysons-boulevard.html" class="project-link"><div class="project-name">1800 Tysons Boulevard Amenities, <span class="project-location">Tysons, VA</span></div>
+        <div class="project-desc">Repositioning of 17,500-sf amenity area with conference center, lounge, activity space, fitness center, and outdoor terrace.</a></div>
+    </div>
+    <div class="project"><a href="https://staging.drinkwithrapha.com/projects/ocado.html" class="project-link"><div class="project-name">Ocado North American Headquarters, <span class="project-location">McLean, VA</span></div>
+        <div class="project-desc">15,972-sf headquarters facility including workspaces, conference rooms, game room, training room, and break areas.</a></div>
+    </div>
+</div>
+
+</body>
+</html>
